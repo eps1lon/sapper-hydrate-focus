@@ -17,7 +17,11 @@ const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/
 export default {
 	client: {
 		input: config.client.input(),
-		output: config.client.output(),
+		output: {
+			...config.client.output(),
+			// something predictable for the static svelte.html
+			chunkFileNames: '[name].js'
+		},
 		plugins: [
 			replace({
 				'process.browser': true,

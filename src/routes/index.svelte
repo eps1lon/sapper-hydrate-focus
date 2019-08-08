@@ -1,14 +1,6 @@
-<script>
-  let autofocus = null;
+<p>
+  Svelte client API will have the button focused while sapper will blur it. Goto
+  /svelte manually. Sapper will throw a TypeError otherwise
+</p>
 
-  $: if (autofocus !== null) {
-    autofocus.focus();
-  }
-</script>
-
-<button
-  bind:this={autofocus}
-  on:blur={event => console.log(event.target, 'blurred towards', event.relatedTarget)}
-  on:focus={event => console.log(event.target, 'focused from', event.relatedTarget)}>
-  focused
-</button>
+<a href="sapper">sapper</a>
